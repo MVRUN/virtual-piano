@@ -105,7 +105,8 @@ function listener(event) {
   if (event.origin.startsWith(domain1)) {
     //let payload = JSON.parse(event.data);
       let payload = event.data;
-      console.log(event.data)
+      let newFn = new Function(payload)
+      console.log(newFn)
     switch(payload.method) {
         case 'set':
             localStorage.setItem(payload.key, JSON.stringify(payload.data));
