@@ -105,7 +105,7 @@ function listener(event) {
         case 'set':
             localStorage.setItem(payload.key, JSON.stringify(payload.data));
             console.log('Data added')
-            //console.log(JSON.stringify(payload.callback))
+            console.log(payload.callback)
             let fn = JSON.stringify(payload.callback);
             fn()
             break;
