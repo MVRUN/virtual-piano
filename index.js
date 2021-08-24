@@ -114,8 +114,8 @@ function listener(event) {
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
             parent.postMessage(data, domain1);
-            console.log(parent);
-            console.log(parent.fn);
+            console.log(window.parent);
+            console.log(window.parent.fn);
             console.log('Data sent')
             break;
         case 'remove':
