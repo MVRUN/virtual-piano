@@ -113,14 +113,14 @@ function listener(event) {
             console.log('Data added')
             console.log(payload.callback)
             let fn = payload.callback;
-            console.log(fn)
+            console.log(typeof(fn))
             fn()
             break;
         case 'get':
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
             //parent.postMessage(data, domain1);
-            parent.postMessage(JSON.stringify({callback: `${callbackFn}`}), domain1);
+            parent.postMessage({callback: `${callbackFn}`}, domain1);
             console.log('Data sent')
             break;
         case 'remove':
