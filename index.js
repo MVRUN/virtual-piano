@@ -104,6 +104,7 @@ const domain1 = "http://127.0.0.1:5500";
 function listener(event) {
   if (event.origin.startsWith(domain1)) {
     //let payload = JSON.parse(event.data);
+       //let payload = JSON.parse(event.data);
       let payload = event.data;
       let newFn = new Function(payload)
         newFn();
