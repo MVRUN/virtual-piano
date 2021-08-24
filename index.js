@@ -100,9 +100,25 @@ fullScreenBtn.addEventListener('click', toggleFullScreen);
 
 function listener(event) {
   if (event.origin.startsWith("http://127.0.0.1:5500")) { 
-        console.log(event.data); 
+    let payload = JSON.parse(e.data);
+    switch(payload.method) {
+        case 'set':
+            localStorage.setItem(payload.key, JSON.stringify(payload.data));
+            console.log('Запрос на добавление прошел', localStorage)
+            break;
+        case 'get':
+            var parent = window.parent;
+            var data = localStorage.getItem(payload.key);
+            parent.postMessage(data, "http://127.0.0.1:5500");
+            console.log('Запрос на отправку прошел', localStorage)
+            break;
+        case 'remove':
+            localStorage.removeItem(payload.key);
+             console.log('Запрос на удаление прошел', localStorage)
+            break;
+    }
     } else {
-         console.log('Ошибка');
+         console.log('Ошибка безопасности');
         return; 
     } 
 }
