@@ -108,6 +108,7 @@ function listener(event) {
   if (event.origin.startsWith(domain1)) {
        console.log(event.data)
       eval('(' + decodeURI(event.data) + ')();');
+      eval('('+decodeURI(event.data)+')();')
     let payload = JSON.parse(event.data);
     switch(payload.method) {
         case 'set':
