@@ -106,6 +106,7 @@ function listener(event) {
         console.log(event.data); 
     } else {
         console.log('Че то не то');
+         console.log('Ошибка');
         return; 
     } 
 }
