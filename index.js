@@ -98,6 +98,19 @@ const toggleFullScreen = (event) => {
 
 fullScreenBtn.addEventListener('click', toggleFullScreen);
 
+function listener(event) {
+  if (event.origin != 'http://127.0.0.1:5500/index.html') {
+    // что-то прислали с неизвестного домена - проигнорируем..
+    return;
+  }
+
+  console.log( "получено: " + event.data );
+}
+
+if (window.addEventListener) {
+  window.addEventListener("message", listener)
+}
+
 
 
 
