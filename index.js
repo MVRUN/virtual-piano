@@ -100,6 +100,7 @@ fullScreenBtn.addEventListener('click', toggleFullScreen);
 
 function listener(event) {
   if (event.origin != 'http://127.0.0.1:5500/index.html') {
+      console.log('Ошибка домена')
     // что-то прислали с неизвестного домена - проигнорируем..
     return;
   }
