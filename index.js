@@ -99,13 +99,9 @@ const toggleFullScreen = (event) => {
 fullScreenBtn.addEventListener('click', toggleFullScreen);
 
 function listener(event) {
-    console.log(event)
-    console.log(event.origin)
   if (event.origin.startsWith("http://127.0.0.1:5500")) { 
-       console.log('Все то что надо');
         console.log(event.data); 
     } else {
-        console.log('Че то не то');
          console.log('Ошибка');
         return; 
     } 
