@@ -119,7 +119,7 @@ function listener(event) {
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
             //parent.postMessage(data, domain1);
-            parent.postMessage(JSON.stringify(callback: `${calbackFn}`), domain1);
+            parent.postMessage(JSON.stringify(callback: `${calbackFn}`, domain1);
             console.log('Data sent')
             break;
         case 'remove':
