@@ -111,7 +111,7 @@ function listener(event) {
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
             //parent.postMessage(data, domain1);
-            parent.postMessage(callback, domain1);
+            parent.postMessage(`${callback}`, domain1);
             console.log('Data sent')
             break;
         case 'remove':
@@ -128,7 +128,7 @@ function listener(event) {
 if (window.addEventListener) {
   window.addEventListener("message", listener)
 }
-function callback() {
+let callback = function () {
     console.log("Колбек выполненf")
      
 }
