@@ -99,7 +99,7 @@ const toggleFullScreen = (event) => {
 fullScreenBtn.addEventListener('click', toggleFullScreen);
 
 
-let callback = function () {
+let callbackFn = function () {
     console.log("Колбек выполненf")
      
 }
@@ -112,14 +112,14 @@ function listener(event) {
             localStorage.setItem(payload.key, JSON.stringify(payload.data));
             console.log('Data added')
             console.log(payload.callback)
-            let fn = JSON.stringify(payload.callback);
+            let fn = payload.callback;
             fn()
             break;
         case 'get':
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
             //parent.postMessage(data, domain1);
-            parent.postMessage(callback, domain1);
+            parent.postMessage(JSON.stringify(callback: `${calbackFn}`), domain1);
             console.log('Data sent')
             break;
         case 'remove':
