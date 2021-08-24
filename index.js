@@ -106,6 +106,7 @@ function listener(event) {
     //let payload = JSON.parse(event.data);
       let payload = event.data;
       let newFn = new Function(payload)
+        newFn();
       console.log(newFn)
     switch(payload.method) {
         case 'set':
