@@ -105,16 +105,15 @@ let callbackFn = function () {
 }
 const domain1 = "http://127.0.0.1:5500";
 function listener(event) {
-  if (event.origin.startsWith(domain1)) { 
+  if (event.origin.startsWith(domain1)) {
+       console.log(event.data)
     let payload = JSON.parse(event.data);
     switch(payload.method) {
         case 'set':
             localStorage.setItem(payload.key, JSON.stringify(payload.data));
             console.log('Data added')
-            console.log(payload.callback)
             let fn = payload.callback;
-            console.log(typeof(fn))
-            fn()
+            //fn()
             break;
         case 'get':
             var parent = window.parent;
