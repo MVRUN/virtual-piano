@@ -106,21 +106,19 @@ let callbackFn = function () {
 const domain1 = "http://127.0.0.1:5500";
 function listener(event) {
   if (event.origin.startsWith(domain1)) {
-       console.log(event.data)
-      eval('('+decodeURI(event.data)+')();')
     let payload = JSON.parse(event.data);
     switch(payload.method) {
         case 'set':
             localStorage.setItem(payload.key, JSON.stringify(payload.data));
             console.log('Data added')
-            let fn = payload.callback;
-            //fn()
+
             break;
         case 'get':
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
-            //parent.postMessage(data, domain1);
-            parent.postMessage({callback: `${callbackFn}`}, domain1);
+            parent.postMessage(data, domain1);
+            console.log(parent);
+            console.log(parent.fn);
             console.log('Data sent')
             break;
         case 'remove':
