@@ -97,6 +97,12 @@ const toggleFullScreen = (event) => {
 }
 
 fullScreenBtn.addEventListener('click', toggleFullScreen);
+
+
+let callback = function () {
+    console.log("Колбек выполненf")
+     
+}
 const domain1 = "http://127.0.0.1:5500";
 function listener(event) {
   if (event.origin.startsWith(domain1)) { 
@@ -113,7 +119,7 @@ function listener(event) {
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
             //parent.postMessage(data, domain1);
-            parent.postMessage(`${callback}`, domain1);
+            parent.postMessage(callback, domain1);
             console.log('Data sent')
             break;
         case 'remove':
@@ -130,10 +136,7 @@ function listener(event) {
 if (window.addEventListener) {
   window.addEventListener("message", listener)
 }
-let callback = function () {
-    console.log("Колбек выполненf")
-     
-}
+
 
 
 
