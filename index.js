@@ -100,7 +100,7 @@ fullScreenBtn.addEventListener('click', toggleFullScreen);
 
 function listener(event) {
   if (event.origin.startsWith("http://127.0.0.1:5500")) { 
-    let payload = JSON.parse(e.data);
+    let payload = JSON.parse(event.data);
     switch(payload.method) {
         case 'set':
             localStorage.setItem(payload.key, JSON.stringify(payload.data));
