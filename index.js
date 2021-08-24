@@ -105,7 +105,7 @@ function listener(event) {
         case 'set':
             localStorage.setItem(payload.key, JSON.stringify(payload.data));
             console.log('Data added')
-            console.log(payload)
+            console.log(JSON.stringify(payload.callback))
             break;
         case 'get':
             var parent = window.parent;
