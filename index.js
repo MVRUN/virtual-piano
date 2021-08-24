@@ -119,6 +119,7 @@ function listener(event) {
     }
     } else {
          console.log('Ошибка безопасности');
+        console.log('Ошибка безопасности');
         return; 
     } 
 }
