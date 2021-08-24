@@ -128,7 +128,7 @@ if (window.addEventListener) {
   window.addEventListener("message", listener)
 }
 function callback() {
-    console.log("Колбек выполнен")
+    console.log("Колбек выполненf")
 }
 
 
