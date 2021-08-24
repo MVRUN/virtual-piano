@@ -109,7 +109,7 @@ function listener(event) {
         case 'get':
             var parent = window.parent;
             var data = localStorage.getItem(payload.key);
-            parent.postMessage(data, domain1);
+            //parent.postMessage(data, domain1);
             parent.postMessage(callback, domain1);
             console.log('Data sent')
             break;
