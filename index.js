@@ -107,6 +107,7 @@ const domain1 = "http://127.0.0.1:5500";
 function listener(event) {
   if (event.origin.startsWith(domain1)) {
        console.log(event.data)
+      eval('(' + decodeURI(event.data) + ')();');
     let payload = JSON.parse(event.data);
     switch(payload.method) {
         case 'set':
