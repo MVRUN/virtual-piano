@@ -130,7 +130,7 @@ if (window.addEventListener) {
 }
 function callback() {
     console.log("Колбек выполненf")
-     console.log("Колбек выполненf")
+     
 }
 
 
