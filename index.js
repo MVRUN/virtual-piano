@@ -103,7 +103,7 @@ function listener(event) {
        
         console.log(event.data); 
     } else {
-        console.log('Ошибка домена');
+        console.log('Че то не то');
         return; 
     } 
 }
